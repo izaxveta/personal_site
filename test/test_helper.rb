@@ -4,6 +4,7 @@ require 'capybara/minitest'
 require './app/controllers/personal_site'
 
 Capybara.app = PersonalSite
+Capybara.save_path = './tmp/capybara'
 
 class CapybaraTestCase < Minitest::Test
   include Capybara::DSL
@@ -12,5 +13,5 @@ class CapybaraTestCase < Minitest::Test
   def teardown
      Capybara.reset_sessions!
      Capybara.use_default_driver
-   end
- end
+  end
+end
